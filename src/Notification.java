@@ -1,8 +1,8 @@
 public abstract class Notification {
     static int nextId = 0;
-    int id;
-    String text;
-    MesseageChannel implementation;
+    protected int id;
+    protected String text;
+    protected MesseageChannel implementation;
 
     public Notification(String text, MesseageChannel channel){
         id = ++nextId;
