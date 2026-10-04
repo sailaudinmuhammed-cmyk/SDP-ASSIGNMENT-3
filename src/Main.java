@@ -100,5 +100,30 @@ public class Main {
         System.out.println("Same object: " + (originalReference == t5));
         System.out.println("Same ID: " + (originalId == t5.id));
         System.out.println("Same text: " + originalText.equals(t5.text));
+
+        // T6
+        Notification t6 = new Reminder(text, new PushChannel());
+
+        String actualT6 = t6.execute();
+        String expectedT6 = "Push" + text + "end of a Push";
+
+        System.out.println("T6:");
+        System.out.println("Expected: " + expectedT6);
+        System.out.println("Actual:   " + actualT6);
+        System.out.println(actualT6.equals(expectedT6) ? "PASS" : "FAIL");
+        System.out.println();
+
+
+// T7
+        Notification t7 = new UrgentAlert(text, new PushChannel());
+
+        String actualT7 = t7.execute();
+        String expectedT7 = "Push" + "URGENT " + text + "end of a Push";
+
+        System.out.println("T7:");
+        System.out.println("Expected: " + expectedT7);
+        System.out.println("Actual:   " + actualT7);
+        System.out.println(actualT7.equals(expectedT7) ? "PASS" : "FAIL");
+        System.out.println();
     }
 }
